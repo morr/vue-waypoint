@@ -36,7 +36,9 @@ npm i vue-waypoint
 
 ```html
 <template>
-  <Waypoint @change="onChange" />
+  <Waypoint @change="onChange">
+    slot content
+  </Waypoint>
 </template>
 ```
 
@@ -109,27 +111,9 @@ const options: IntersectionObserverInit = {
 - [x] Set your preferred tag for the element
 - [x] Defaults to `div`
 
-- Waypoint as div: `<Waypoint :tag="'div'" /> --> renders --> <div class="waypoint"></div>`
-- Waypoint as span: `<Waypoint :tag="'span'" /> --> renders --> <span class="waypoint"></span>`
-- Waypoint as p: `<Waypoint :tag="'p'" /> --> renders --> <p class="waypoint"></p>`
-
-## CSS helpers
-
-- [x] Zero configuration needed
-- [x] Useful for simple CSS animations
-
-The component comes with three classes:
-
-- `waypoint`: set when the waypoint is ready
-- `going-in`, `going-out`: dinamically changed when the waypoint comes in and out
-- `direction-up`, `direction-down`, `direction-left`, `direction-right`: dinamically changed when the direction changes
-
-Examples:
-
-- `<Waypoint class="waypoint going-in direction-up" />` - the element is visible and came from bottom and is going top (natural scroll)
-- `<Waypoint class="waypoint going-in direction-down" />` - the element is visible and came from top and is going up (reverse natural scroll)
-- `<Waypoint class="waypoint going-out direction-up" />` - the element is not visible and came from bottom and is going top
-- `<Waypoint class="waypoint going-out direction-down" />` - the element is not visible and came from top and is going up
+- Waypoint as div: `<Waypoint :tag="'div'" /> --> renders --> <div></div>`
+- Waypoint as span: `<Waypoint :tag="'span'" /> --> renders --> <span></span>`
+- Waypoint as p: `<Waypoint :tag="'p'" /> --> renders --> <p></p>`
 
 ## Events
 

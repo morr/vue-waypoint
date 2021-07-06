@@ -12,7 +12,7 @@ import {
   ref,
   watch
 } from "vue";
-import { createObserver, Direction, Going, WaypointState } from "./observer";
+import { createObserver, WaypointState } from "./observer";
 
 export default defineComponent({
   name: "Waypoint",
@@ -76,28 +76,14 @@ export default defineComponent({
     onUpdated(() => (mounted.value = true));
     onBeforeUnmount(() => (mounted.value = false));
 
-    // css classes
-    const goingClass: ComputedRef<string> = computed(() => {
-      const going: Going | undefined = waypointState.value?.going;
-      if (typeof going === "undefined") return "";
-      return `going-${going.toString().toLowerCase()}`;
-    });
-
-    const directionClass: ComputedRef<string | undefined> = computed(() => {
-      const direction: Direction | undefined = waypointState.value?.direction;
-      if (typeof direction === "undefined") return "";
-      return `direction-${direction.toString().toLowerCase()}`;
-    });
-
-    const stringClass: ComputedRef<string> = computed(() => {
-      return [goingClass.value, directionClass.value].join(" ").trim();
-    });
-
     return () =>
-      h(props.tag, {
-        ref: element,
-        class: `waypoint ${stringClass.value}`.trim()
-      });
+      h(
+        props.tag,
+        {
+          ref: element
+        },
+        context.slots.default ? context.slots.default() : undefined
+      );
   }
 });
 </script>
