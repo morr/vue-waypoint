@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [4.0.8](https://github.com/morr/vue-waypoint/compare/v4.0.7...v4.0.8) (2021-09-01)
+
 ### [4.0.7](https://github.com/morr/vue-waypoint/compare/v4.0.3...v4.0.7) (2021-09-01)
 
 ### [4.0.3](https://github.com/morr/vue-waypoint/compare/v4.0.1...v4.0.3) (2021-07-06)
